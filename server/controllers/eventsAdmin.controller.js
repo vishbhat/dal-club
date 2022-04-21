@@ -122,8 +122,8 @@ const activateEvent = (req, res) => {
 const imageUpload = (req, res) => {
   console.log(req);
   const s3 = new AWS.S3({
-    accessKeyId: "AKIA2VTCDDU64JFR2BDJ",
-    secretAccessKey: "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",
+    accessKeyId: process.env.AWS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
   });
   if (req.files === null) {
     res.status(400).send({ msg: "no file found" });
